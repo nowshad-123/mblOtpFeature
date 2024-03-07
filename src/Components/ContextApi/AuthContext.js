@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
                     if (parsedToken?.token !== undefined && parsedToken?.token !== null) {
                         axios.defaults.headers.common['Authorization'] = `Bearer ${parsedToken.token}`;
-                        const { data } = await axios.get('http://localhost:4000/userAuth');
+                        const { data } = await axios.get('https://otp-back-iymp.onrender.com/userAuth');
 
                         if (data.success) {
                             dispatch(true);
