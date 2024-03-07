@@ -15,7 +15,7 @@ export default function PrivateRoute() {
                     setOk(false);
                 } else {
                     axios.defaults.headers.common['Authorization'] = `Bearer ${parsedToken.token}`;
-                    const response = await axios.get('http://localhost:4000/userAuth');
+                    const response = await axios.get('https://otp-back-iymp.onrender.com/userAuth');
 
                     if (response.data.success) {
                         setOk(true);

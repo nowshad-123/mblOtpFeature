@@ -23,7 +23,7 @@ const Registration = () => {
     const handleOtp = async () => {
         setSentOtp(true);
 
-        const { data } = await axios.post("http://localhost:4000/users", {
+        const { data } = await axios.post("https://otp-back-iymp.onrender.com/users", {
             "firstName": firstName,
             "phone": number
         });
@@ -35,7 +35,7 @@ const Registration = () => {
         // Disable the button after clicking
         setVerifyClicked(true);
 
-        const { data } = await axios.post('http://localhost:4000/users/verify', {
+        const { data } = await axios.post('https://otp-back-iymp.onrender.com/verify', {
             "firstName": firstName,
             "phone": number,
             "otpCode": otpCode
